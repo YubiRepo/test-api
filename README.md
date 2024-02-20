@@ -56,7 +56,16 @@ php artisan storage:link
 9. Start development server
 ```shell
 php artisan serve
-``` 
+```
+
+10. Login
+```json
+{
+    "email": "admin@example.com",
+    "password": "password"
+}
+```
+Go to `/api/login`
 
 <h2 id="production-setup">Production Setup</h2>
 
