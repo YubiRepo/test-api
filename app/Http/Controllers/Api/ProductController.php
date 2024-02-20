@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index(): ProductCollection|ProductResource
     {
-        $products = Product::with(['unit:id,name'])->paginate();
+        $products = Product::with(['unit:id,name'])->latest()->paginate();
         $products->through(function ($product) {
             if (!$product->image) {
                 $product->image = 'https://via.placeholder.com/350?text=' . str_replace(' ', '+', $product->name);
